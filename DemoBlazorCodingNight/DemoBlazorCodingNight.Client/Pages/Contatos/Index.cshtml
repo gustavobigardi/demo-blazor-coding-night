@@ -1,0 +1,71 @@
+﻿@using DemoBlazorCodingNight.Shared
+@page "/contatos"
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+<h1>Contatos</h1>
+
+<button class="btn btn-default" onclick="@NovoContato"><span class="oi oi-plus" aria-hidden="true"></span> Novo</button><br /><br />
+
+@if (contatos == null)
+{
+    <p><em>Carregando contatos...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tel. Res.</th>
+                <th>Tel. Cel.</th>
+                <th>Observações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contato in contatos)
+            {
+                <tr>
+                    <td>
+                        <button class="btn btn-warn" onclick="@(e => EditarContato(contato.Id))"><span class="oi oi-pencil" aria-hidden="true"></span> Editar</button>
+                        <button class="btn btn-warn" onclick="@(e => ExcluirContato(contato.Id))"><span class="oi oi-trash" aria-hidden="true"></span> Excluir</button><br /><br />
+                    </td>
+                    <td>@contato.Nome</td>
+                    <td>@contato.Email</td>
+                    <td>@contato.TelefoneRes</td>
+                    <td>@contato.TelefoneCel</td>
+                    <td>@contato.Observacoes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions {
+    Contato[] contatos;
+
+    protected override async Task OnInitAsync()
+    {
+        contatos = await Http.GetJsonAsync<Contato[]>("api/Contatos/");
+    }
+
+    private void NovoContato()
+    {
+        UriHelper.NavigateTo("/contatos/inserir");
+    }
+
+    private void EditarContato(long id)
+    {
+        UriHelper.NavigateTo($"/contatos/editar/{id}");
+    }
+
+    private async Task ExcluirContato(long id)
+    {
+        await Http.DeleteAsync($"api/contatos/{id}");
+        contatos = null;
+        this.StateHasChanged();
+        await this.OnInitAsync();
+    }
+}

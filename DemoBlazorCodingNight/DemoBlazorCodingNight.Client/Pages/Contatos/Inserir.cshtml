@@ -1,0 +1,50 @@
+﻿@using DemoBlazorCodingNight.Shared
+@page "/contatos/inserir"
+@inject HttpClient Http
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+<h1>Inserir novo contato</h1>
+
+<label id="labelNome" for="txtNome">Nome</label>
+<input type="text" bind="@nome" id="txtNome" />
+<br /><br />
+<label id="labelEmail" for="txtEmail">Email</label>
+<input type="text" bind="@email" id="txtEmail" />
+<br /><br />
+<label id="labelTelRes" for="txtTelRes">Telefone Res.</label>
+<input type="text" bind="@telefoneRes" id="txtTelRes" />
+<br /><br />
+<label id="labelTelCel" for="txtTelCel">Telefone Cel.</label>
+<input type="text" bind="@telefoneCel" id="txtTelCel" />
+<br /><br />
+<label id="labelObs" for="txtObs">Observações</label>
+<input type="text" bind="@observacao" id="txtObs" />
+
+<button class="btn btn-primary" onclick="@SalvarContato">Salvar</button>
+
+@functions {
+    string nome;
+    string email;
+    string telefoneRes;
+    string telefoneCel;
+    string observacao;
+
+    async Task SalvarContato()
+    {
+        var contato = new Contato()
+        {
+            Nome = nome,
+            Email = email,
+            TelefoneRes = telefoneRes,
+            TelefoneCel = telefoneCel,
+            Observacoes = observacao
+        };
+
+        var resultado = await Http.PostJsonAsync<Contato>("api/Contatos", contato);
+
+        if (resultado.Id > 0)
+        {
+            UriHelper.NavigateTo("/contatos");
+        }
+    }
+}

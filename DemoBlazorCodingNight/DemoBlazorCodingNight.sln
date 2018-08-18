@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlazorCodingNight.Server", "DemoBlazorCodingNight.Server\DemoBlazorCodingNight.Server.csproj", "{324D64B5-6E02-4983-947B-6FB0DDB0CA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBlazorCodingNight.Server", "DemoBlazorCodingNight.Server\DemoBlazorCodingNight.Server.csproj", "{324D64B5-6E02-4983-947B-6FB0DDB0CA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlazorCodingNight.Client", "DemoBlazorCodingNight.Client\DemoBlazorCodingNight.Client.csproj", "{1CED6081-D802-49F4-A6F4-BA71866F44EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBlazorCodingNight.Client", "DemoBlazorCodingNight.Client\DemoBlazorCodingNight.Client.csproj", "{1CED6081-D802-49F4-A6F4-BA71866F44EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlazorCodingNight.Shared", "DemoBlazorCodingNight.Shared\DemoBlazorCodingNight.Shared.csproj", "{85B3F335-965C-4A4A-8C3E-647CE3D65CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBlazorCodingNight.Shared", "DemoBlazorCodingNight.Shared\DemoBlazorCodingNight.Shared.csproj", "{85B3F335-965C-4A4A-8C3E-647CE3D65CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

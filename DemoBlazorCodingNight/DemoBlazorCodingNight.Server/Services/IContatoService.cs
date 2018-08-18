@@ -1,4 +1,4 @@
-﻿using DemoBlazorCodingNight.Server.Models;
+﻿using DemoBlazorCodingNight.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;

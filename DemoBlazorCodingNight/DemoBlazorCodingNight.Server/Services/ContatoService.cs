@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DemoBlazorCodingNight.Server.Data;
 using DemoBlazorCodingNight.Server.Exceptions;
-using DemoBlazorCodingNight.Server.Models;
+using DemoBlazorCodingNight.Shared;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoBlazorCodingNight.Server.Services

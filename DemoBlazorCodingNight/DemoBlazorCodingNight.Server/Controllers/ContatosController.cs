@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DemoBlazorCodingNight.Server.Exceptions;
-using DemoBlazorCodingNight.Server.Models;
 using DemoBlazorCodingNight.Server.Services;
+using DemoBlazorCodingNight.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
